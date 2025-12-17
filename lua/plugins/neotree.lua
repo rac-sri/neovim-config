@@ -120,7 +120,7 @@ return {
 			-- see `:h neo-tree-custom-commands-global`
 			commands = {},
 			window = {
-				position = "left",
+				position = "right",
 				width = 40,
 				mapping_options = {
 					noremap = true,
@@ -217,7 +217,7 @@ return {
 					leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
 				},
 				group_empty_dirs = false, -- when true, empty folders will be grouped together
-				hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
+				hijack_netrw_behavior = "disabled", -- netrw disabled, opening a directory opens neo-tree
 				-- in whatever position is specified in window.position
 				-- "open_current",  -- netrw disabled, opening a directory opens within the
 				-- window like netrw would, regardless of window.position
@@ -308,7 +308,7 @@ return {
 			"<cmd>Neotree toggle position=right<CR>",
 			{ noremap = true, silent = true, desc = "Toggle Neo-tree" }
 		)
-		vim.keymap.set("n", "<leader>e", ":Neotree toggle position=left<CR>", { noremap = true, silent = true }) -- focus file explorer
+		vim.keymap.set("n", "<leader>e", ":Neotree toggle position=right<CR>", { noremap = true, silent = true }) -- focus file explorer
 		vim.keymap.set("n", "<leader>ngs", ":Neotree float git_status<CR>", { noremap = true, silent = true }) -- open git status window
 	end,
 }
