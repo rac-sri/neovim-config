@@ -31,6 +31,8 @@ require("lazy").setup({
 	require("plugins.comment"),
 	require("plugins.yazi"),
 	-- require("plugins.blink"),
+	-- require("plugins.avante"),
+	require("plugins.opencode"),
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
