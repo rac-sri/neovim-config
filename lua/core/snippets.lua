@@ -14,8 +14,9 @@ vim.diagnostic.config({
 			return string.format("%s %s", code, diagnostic.message)
 		end,
 	},
-	underline = false,
+	underline = true,
 	update_in_insert = true,
+	severity_sort = true,
 	float = {
 		source = true, -- Or "if_many"
 	},
