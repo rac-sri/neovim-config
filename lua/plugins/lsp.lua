@@ -247,6 +247,13 @@ return {
 		vim.list_extend(ensure_installed, {
 			"stylua", -- Used to format Lua code
 		})
+
+		local make_position_params = vim.lsp.util.make_position_params
+
+		vim.lsp.util.make_position_params = function(window, encoding)
+			return make_position_params(window, encoding or "utf-16")
+		end
+
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 		for server, cfg in pairs(servers) do

@@ -56,3 +56,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		end
 	end,
 })
+
+vim.lsp.util._get_offset_encoding = function()
+	return "utf-16"
+end
