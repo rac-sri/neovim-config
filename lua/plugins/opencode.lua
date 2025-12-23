@@ -43,22 +43,18 @@ return {
 		-- Avante-style keybindings
 		---------------------------------------------------------------------------
 
-		vim.keymap.set({ "n", "x" }, "<leader>aa", function()
-			oc.ask("@this ")
-		end, { desc = "OpenCode: open sidebar + ask" })
-
 		-- Inline ask only (no sidebar)
-		vim.keymap.set({ "n", "x" }, "<leader>ai", function()
+		vim.keymap.set({ "n", "x" }, "<leader>oi", function()
 			oc.ask("@this ")
 		end, { desc = "OpenCode: inline ask" })
 
 		-- Toggle sidebar only
-		vim.keymap.set("n", "<leader>ap", function()
+		vim.keymap.set("n", "<leader>op", function()
 			oc.toggle()
 		end, { desc = "OpenCode: toggle panel" })
 
 		-- Action / command picker (with sidebar)
-		vim.keymap.set("n", "<leader>ac", function()
+		vim.keymap.set("n", "<leader>oc", function()
 			oc.select()
 		end, { desc = "OpenCode: action picker" })
 

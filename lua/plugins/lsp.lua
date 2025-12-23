@@ -203,19 +203,9 @@ return {
 
 			-- ✅ Solidity
 			solidity = {
-				cmd = { "solidity-language-server", "--stdio" },
-				root_dir = require("lspconfig").util.root_pattern(
-					"foundry.toml",
-					"hardhat.config.js",
-					"truffle-config.js",
-					"package.json",
-					".git"
-				),
-				settings = {
-					solidity = {
-						remapping = {},
-					},
-				},
+				cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
+				single_file_support = true,
+				checkOnSave = true,
 			},
 
 			-- ✅ Lua
