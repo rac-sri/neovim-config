@@ -32,7 +32,7 @@ require("lazy").setup({
 	require("plugins.nvim-scrollbar"),
 	require("plugins.yazi"),
 	require("plugins.tabby"),
-	require("plugins.gemini"),
+	-- require("plugins.gemini"),
 	require("plugins.smear"),
 	-- require("plugins.blink"),
 	-- require("plugins.avante"),

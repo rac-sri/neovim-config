@@ -36,6 +36,16 @@ return {
 
 		vim.o.autoread = true
 
+		-- Enhanced buffer reload for opencode edits
+		vim.api.nvim_create_autocmd("BufWritePost", {
+			callback = function()
+				-- Trigger checktime after a short delay to allow opencode to complete
+				vim.defer_fn(function()
+					vim.cmd("checktime")
+				end, 100)
+			end,
+		})
+
 		local oc = require("opencode")
 		local snacks = require("snacks")
 
