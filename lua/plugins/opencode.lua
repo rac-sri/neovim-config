@@ -24,6 +24,16 @@ return {
 				focus_on_open = true,
 			},
 
+			provider = {
+				snacks = {
+					win = {
+						wo = {
+							winhighlight = "",
+						},
+					},
+				},
+			},
+
 			connection = {
 				auto_connect = true,
 				cwd_scope = true,
