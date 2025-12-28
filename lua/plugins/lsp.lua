@@ -197,6 +197,10 @@ return {
 					["rust-analyzer"] = {
 						cargo = { allFeatures = true },
 						checkOnSave = true,
+
+						rustfmt = {
+							enable = true,
+						},
 					},
 				},
 			},
