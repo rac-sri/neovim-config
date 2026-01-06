@@ -60,3 +60,44 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.lsp.util._get_offset_encoding = function()
 	return "utf-16"
 end
+
+local M = {}
+
+local function running()
+	local h = io.popen("docker ps --filter name=opencode --format '{{.Names}}'")
+	if not h then
+		return false
+	end
+	local out = h:read("*a")
+	h:close()
+	return out:match("opencode") ~= nil
+end
+
+function M.start()
+	if running() then
+		return
+	end
+
+	vim.fn.jobstart({
+		"docker",
+		"run",
+		"--rm",
+		"--name",
+		"opencode",
+		"--read-only",
+		"--cap-drop=ALL",
+		"--security-opt",
+		"no-new-privileges",
+		"-p",
+		"4040:4040",
+		"-v",
+		vim.fn.getcwd() .. ":/workspace:rw",
+		"-v",
+		os.getenv("HOME") .. "/.config/opencode:/home/opencode/.config/opencode:ro",
+		"opencode:latest",
+	}, { detach = true })
+
+	vim.notify("OpenCode sandbox started", vim.log.levels.INFO)
+end
+
+return M
