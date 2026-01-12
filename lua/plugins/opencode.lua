@@ -12,9 +12,6 @@ return {
 	},
 
 	config = function()
-		---------------------------------------------------------------------------
-		-- OpenCode core options
-		---------------------------------------------------------------------------
 		vim.g.opencode_opts = {
 			ui = {
 				layout = "vertical",
@@ -43,7 +40,6 @@ return {
 				reload = true,
 			},
 		}
-
 		vim.o.autoread = true
 
 		-- Enhanced buffer reload for opencode edits
@@ -57,8 +53,7 @@ return {
 		})
 
 		local oc = require("opencode")
-		local snacks = require("snacks")
-
+		--
 		---------------------------------------------------------------------------
 		-- Avante-style keybindings
 		---------------------------------------------------------------------------

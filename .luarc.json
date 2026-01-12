@@ -1,6 +1,7 @@
 {
     "diagnostics.disable": [
         "missing-fields",
-        "deprecated"
+        "deprecated",
+        "duplicate-set-field"
     ]
 }

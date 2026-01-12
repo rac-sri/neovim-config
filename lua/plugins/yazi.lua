@@ -11,7 +11,7 @@ return {
 		{
 			"<leader>-",
 			mode = { "n", "v" },
-			"<cmd>Yazi cwd<cr>",
+			"<cmd>Yazi<cr>",
 			desc = "Open yazi at the current file",
 		},
 		{
