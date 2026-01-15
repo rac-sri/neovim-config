@@ -7,7 +7,6 @@ return {
 	event = "VeryLazy",
 	version = "v0.0.25", -- Never set this value to "*"! Never!
 	---@module 'avante'
-	---@type avante.Config
 
 	config = function()
 		require("avante").setup({
@@ -16,7 +15,7 @@ return {
 			-- this file can contain specific instructions for your project
 			instructions_file = "avante.md",
 			-- for example
-			provider = "gemini-cli",
+			-- provider = "claude-code",
 			providers = {
 				claude = {
 					endpoint = "https://api.anthropic.com",
@@ -48,7 +47,7 @@ return {
 					use_ReAct_prompt = false,
 					timeout = 30000, -- Timeout in milliseconds
 					model = "llama3.2",
-					is_env_set = require("avante.providers.ollama").check_endpoint_alive,
+					-- is_env_set = require("avante.providers.ollama").check_endpoint_alive,
 				},
 			},
 			acp_providers = {

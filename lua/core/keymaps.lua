@@ -37,6 +37,8 @@ vim.keymap.set("n", "<Right>", ":vertical resize +2<CR>", opts)
 -- Buffers
 vim.keymap.set("n", "<leader>t", ":bnext<CR>", opts)
 vim.keymap.set("n", "<leader>T", ":bprevious<CR>", opts)
+vim.keymap.set("n", "<Tab>l", ":bnext<CR>", opts) -- next buffer
+vim.keymap.set("n", "<Tab>h", ":bprevious<CR>", opts) -- previous buffer
 vim.keymap.set("n", "<leader>x", ":bdelete!<CR>", opts) -- close buffer
 vim.keymap.set("n", "<leader>b", "<cmd> enew <CR>", opts) -- new buffer
 

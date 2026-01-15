@@ -32,7 +32,9 @@ require("lazy").setup({
 	require("plugins.nvim-scrollbar"),
 	require("plugins.yazi"),
 	require("plugins.tabby"),
-	require("plugins.copilot"),
+	-- require("plugins.avante"),
+	-- require("plugins.copilot"),
+	require("plugins.claudecode"),
 	require("plugins.smear"),
 	require("plugins.opencode"),
 })
