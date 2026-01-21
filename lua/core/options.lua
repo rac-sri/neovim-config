@@ -44,3 +44,14 @@ vim.opt.runtimepath:remove("/usr/share/vim/vimfiles") -- Separate Vim plugins fr
 vim.g.completion_enable_default_keymaps = false
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.laststatus = 3
+
+-- Session options for windovigation.nvim
+vim.opt.sessionoptions = {
+  "buffers",
+  "curdir",
+  "folds",
+  "help",
+  "tabpages",
+  "winsize",
+  "terminal",
+}

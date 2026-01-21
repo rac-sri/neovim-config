@@ -38,6 +38,7 @@ require("lazy").setup({
 	require("plugins.claudecode"),
 	require("plugins.smear"),
 	require("plugins.opencode"),
+	require("plugins.windovigation"),
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
