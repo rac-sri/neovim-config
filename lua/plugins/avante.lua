@@ -5,7 +5,7 @@ return {
 	build = vim.fn.has("win32") ~= 0 and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
 		or "make",
 	event = "VeryLazy",
-	version = "v0.0.25", -- Never set this value to "*"! Never!
+	version = false, -- Use latest for ACP provider support
 	---@module 'avante'
 
 	config = function()
@@ -15,7 +15,22 @@ return {
 			-- this file can contain specific instructions for your project
 			instructions_file = "avante.md",
 			-- for example
-			-- provider = "claude-code",
+			provider = "ollama",
+			auto_suggestions_provider = "ollama", -- Provider for Smart Tab suggestions
+			behaviour = {
+				auto_suggestions = true, -- Enable Cursor-like Smart Tab
+			},
+			suggestion = {
+				debounce = 600, -- Debounce in ms to reduce API calls
+			},
+			mappings = {
+				suggestion = {
+					accept = "<Tab>",
+					next = "<C-j>",
+					prev = "<C-k>",
+					dismiss = "<C-e>",
+				},
+			},
 			providers = {
 				claude = {
 					endpoint = "https://api.anthropic.com",
@@ -46,7 +61,7 @@ return {
 					endpoint = "http://127.0.0.1:11434",
 					use_ReAct_prompt = false,
 					timeout = 30000, -- Timeout in milliseconds
-					model = "llama3.2",
+					model = "qwen3-coder:30b-a3b-q4_K_M",
 					-- is_env_set = require("avante.providers.ollama").check_endpoint_alive,
 				},
 			},

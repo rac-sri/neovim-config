@@ -101,6 +101,9 @@ return {
 
 				map("gy", vim.lsp.buf.type_definition, "[G]oto [T]ype [D]efinition")
 
+				-- Hover documentation
+				map("K", vim.lsp.buf.hover, "Hover Documentation")
+
 				-- The following two autocommands are used to highlight references of the
 				-- word under your cursor when your cursor rests there for a little while.
 				--    See `:help CursorHold` for information about when this is executed
@@ -167,6 +170,9 @@ return {
 			ts_ls = {},
 			ruff = {},
 
+			-- NOTE: Disabled solidity_ls (vscode-solidity) - has issues with struct imports from same directory
+			-- Using solidity_ls_nomicfoundation instead (see below)
+
 			pylsp = {
 				settings = {
 					pylsp = {
@@ -207,11 +213,14 @@ return {
 				},
 			},
 
-			-- ✅ Solidity
-			solidity = {
-				cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
-				single_file_support = true,
-				checkOnSave = true,
+			-- ✅ Solidity (solidity-ls / vscode-solidity)
+			solidity_ls = {
+				root_dir = function(bufnr, on_dir)
+					local fname = vim.api.nvim_buf_get_name(bufnr)
+					local markers = { "foundry.toml", "hardhat.config.js", "hardhat.config.ts", "remappings.txt", ".git" }
+					local root = vim.fs.root(bufnr, markers)
+					on_dir(root or vim.fs.dirname(fname))
+				end,
 			},
 
 			-- ✅ Lua
