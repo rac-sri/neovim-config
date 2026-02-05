@@ -33,12 +33,12 @@ require("lazy").setup({
 	require("plugins.yazi"),
 	require("plugins.tabby"),
 	require("plugins.gemini"),
+	require("plugins.lazy-git"),
 	-- require("plugins.avante"),
 	-- require("plugins.copilot"),
 	require("plugins.claudecode"),
 	require("plugins.smear"),
 	require("plugins.opencode"),
-	require("plugins.windovigation"),
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`

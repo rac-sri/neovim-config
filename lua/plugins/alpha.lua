@@ -20,6 +20,10 @@ return {
 			[[                     only local state                ]],
 		}
 
+		dashboard.section.header.opts.hl = "AlphaHeader"
+
+		vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#4fd1c5" })
+
 		alpha.setup(dashboard.opts)
 	end,
 }
