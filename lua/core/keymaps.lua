@@ -84,3 +84,5 @@ vim.opt.autochdir = false
 vim.keymap.set("n", "<leader>f", function()
 	vim.lsp.buf.format({ async = false })
 end, { desc = "Format buffer" })
+
+vim.keymap.set("v", "<leader>r", '"hy:%s/<C-r>h//g<Left><Left>', { desc = "Replace visual selection" })

@@ -11,8 +11,8 @@ return {
 		{
 			"<leader>-",
 			mode = { "n", "v" },
-			"<cmd>Yazi cwd<cr>",
-			desc = "Open yazi at the current pwd",
+			"<cmd>Yazi<cr>",
+			desc = "Open yazi at the current buffer's directory",
 		},
 		{
 			"<c-up>",
